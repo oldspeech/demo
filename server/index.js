@@ -1,6 +1,6 @@
 const keys = require("./keys");
 
-// Express App Setup
+// Express App Setup part
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -25,7 +25,7 @@ pgClient.on("connect", (client) => {
     .catch((err) => console.error(err));
 });
 
-// Redis Client Setup
+// Redis Client Setup part
 const redis = require("redis");
 const redisClient = redis.createClient({
   host: keys.redisHost,
@@ -34,7 +34,7 @@ const redisClient = redis.createClient({
 });
 const redisPublisher = redisClient.duplicate();
 
-// Express route handlers
+// Express route handlers part
 
 app.get("/", (req, res) => {
   res.send("Hi");
